@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  redis:
+    image: redis
+    # command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 127.0.0.1:6379:6379
+    # working_dir: /app
+    # volumes:
+    #   - ./:/app
+    network_mode: "host"
+
+  kairoscassandra:
+    image: adityabohra619/kairosdb1.2-cassandra3.5:Custom
+    # command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 127.0.0.1:8080:8080
+    # working_dir: /app
+    # volumes:
+    #   - ./:/app
+    network_mode: "host"
